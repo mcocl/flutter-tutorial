@@ -32,9 +32,16 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title)
       ),
-      body: const Center(
-        child: Text("hello World"),
-      ),
+      body: Container(
+        margin: const EdgeInsets.all(50),
+        padding: const EdgeInsets.all(50),
+        color: Colors.amber,
+        width: 300,
+        height: 300,
+        child: const Center(
+          child: Text("Hello Widget")
+        ),
+      )
     );
   }
 }
