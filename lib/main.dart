@@ -39,7 +39,10 @@ class MyHomePage extends StatelessWidget {
         width: 300,
         height: 300,
         child: const Center(
-          child: Text("Hello Widget")
+          // child: Text("Hello Widget", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),)
+          // child: Image.asset("images/flutter-logo.png")
+          // child: Image.network("https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Google-flutter-logo.svg/768px-Google-flutter-logo.svg.png")
+          child: Icon(Icons.favorite, color: Colors.red),
         ),
       )
     );
