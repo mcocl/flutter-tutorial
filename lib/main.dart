@@ -33,16 +33,20 @@ class MyHomePage extends StatelessWidget {
         title: Text(title)
       ),
       body: Container(
-        margin: const EdgeInsets.all(50),
-        padding: const EdgeInsets.all(50),
+        width: 350,
+        height: 400,
         color: Colors.amber,
-        width: 300,
-        height: 300,
-        child: const Center(
-          // child: Text("Hello Widget", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),)
-          // child: Image.asset("images/flutter-logo.png")
-          // child: Image.network("https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Google-flutter-logo.svg/768px-Google-flutter-logo.svg.png")
-          child: Icon(Icons.favorite, color: Colors.red),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(flex: 2, child: Container(color: Colors.blue[100], height: 100)),
+            Expanded(child: Container(color: Colors.blue[200], height: 100)),
+            Expanded(child: Container(color: Colors.blue[300], height: 100)),
+            // Container(color: Colors.blue[100], height: 100, width: 100,),
+            // Container(color: Colors.blue[200], height: 100, width: 100,),
+            // Container(color: Colors.blue[300], height: 100, width: 100,),
+          ],
         ),
       )
     );
