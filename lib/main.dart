@@ -32,23 +32,55 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title)
       ),
-      body: Container(
-        width: 350,
-        height: 400,
-        color: Colors.amber,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(flex: 2, child: Container(color: Colors.blue[100], height: 100)),
-            Expanded(child: Container(color: Colors.blue[200], height: 100)),
-            Expanded(child: Container(color: Colors.blue[300], height: 100)),
-            // Container(color: Colors.blue[100], height: 100, width: 100,),
-            // Container(color: Colors.blue[200], height: 100, width: 100,),
-            // Container(color: Colors.blue[300], height: 100, width: 100,),
-          ],
-        ),
-      )
+      body: myGridView()
     );
   }
+}
+
+GridView myGridView() {
+  return GridView.count(
+    crossAxisCount: 3,
+    padding: const EdgeInsets.all(10),
+    mainAxisSpacing: 10,
+    crossAxisSpacing: 20,
+    children: [
+      Container(color: Colors.blue[100], child: const Text("1"),),
+      Container(color: Colors.blue[200], child: const Text("2"),),
+      Container(color: Colors.blue[300], child: const Text("3"),),
+      Container(color: Colors.blue[400], child: const Text("4"),),
+      Container(color: Colors.blue[500], child: const Text("5"),),
+      Container(color: Colors.blue[600], child: const Text("6"),),
+      Container(color: Colors.blue[700], child: const Text("7"),)
+    ],
+  );
+}
+
+ListView myListTile() {
+  return ListView(
+    children: [
+      ListTile(
+        title: const Text('One-line ListTile'),
+        onTap: () {},
+      ),
+      ListTile(
+        title: const Text('With the subtitle & trailing'),
+        subtitle: const Text('Using ListTitle'),
+        trailing: const Icon(Icons.more_vert),
+        onTap: () {},
+      ),
+      ListTile(
+        title: const Text('With the Leading & trailing'),
+        leading: const FlutterLogo(size: 40.0,),
+        trailing: const Icon(Icons.autorenew),
+        onTap: () {},
+      ),
+      ListTile(
+        title: const Text('With the leading, subtitle & trailing'),
+        leading: const Icon(Icons.account_box, size: 40,),
+        subtitle: const Text('Add Phone Number'),
+        trailing: const Icon(Icons.add),
+        onTap: () {},
+      ),
+    ],
+  );
 }
