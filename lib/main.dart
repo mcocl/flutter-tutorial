@@ -15,7 +15,52 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/firstpage',
+      routes: {
+        '/firstpage': (context) => FirstPage(),
+        '/secondpage': (context) => SecondPage()
+      },
+    );
+  }
+}
+
+class FirstPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("First Page"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: (){
+            Navigator.pushNamed(
+              context,
+              '/secondpage'
+            );
+          },
+          child: const Text("다음 페이지로 이동"),
+        ),
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Second Page"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          child: const Text("이전 페이지로 이동"),
+        ),
+      ),
     );
   }
 }
